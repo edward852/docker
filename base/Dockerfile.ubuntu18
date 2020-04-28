@@ -1,0 +1,36 @@
+FROM ubuntu:18.04
+ARG OS=ubuntu
+# for autobuild (build stage)
+ARG DEBIAN_FRONTEND=noninteractive
+
+ENV SHR_PATH=/home
+WORKDIR ${SHR_PATH}
+
+ENV SHR_SCRIPTS=${SHR_PATH}/scripts \
+    SHR_CONFIGS=${SHR_PATH}/configs \
+    USR_NAME=default \
+    USR_ID=1000 \
+    USR_PW=passwd \
+    GRP_ID=1000 \
+    USE_MIRROR=none \
+    LANG_ABBR=en \
+    WITH_SUDO=yes \
+    SUDO_WITH_PW=yes
+
+ENV DISPLAY=:1 \
+    VNC_PW=${USR_PW} \
+    VNC_RES=1136x640 \
+    VNC_PORT=5901 \
+    NO_VNC_PORT=6901
+
+EXPOSE $VNC_PORT $NO_VNC_PORT
+
+ADD ./comm/configs/ ${SHR_CONFIGS}/
+ADD ./${OS}/configs/ ${SHR_CONFIGS}/
+ADD ./comm/scripts/ ${SHR_SCRIPTS}/
+ADD ./${OS}/scripts/ ${SHR_SCRIPTS}/
+
+RUN find ${SHR_SCRIPTS} -name '*.sh' -exec chmod a+x {} +
+RUN ${SHR_SCRIPTS}/build/init.sh
+
+ENTRYPOINT ["start_with_uid_gid.sh"]
