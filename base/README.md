@@ -4,7 +4,7 @@ Both uid and gid mapped using gosu at run stage.
 # RUN
 Use `-e <key>=<val>` or `--env-file <env file>` to override environment variables
 ```shell script
-docker run -d -p 5901:5901 -p 6901:6901 -e USR_ID=501 -e GRP_ID=20 -e USR_NAME=edward --name ubuntu18 edward852/linux-xfce-vnc-mapped-uid startup.sh
+docker run -d -p 5901:5901 -p 6901:6901 -e USR_ID=501 -e GRP_ID=20 -e USR_NAME=edward --name ubuntu18 edward852/ubuntu-xfce-vnc-mapped-uid startup.sh
 
 # start and stop with name(above-specified)
 docker start ubuntu18
