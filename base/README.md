@@ -1,5 +1,5 @@
-Container images with xfce4 ui, vnc server(noVNC as well).  
-Both uid and gid mapped using gosu at run stage.  
+Container images with xfce4 ui, vnc server(noVNC as well), firefox.  
+Uid and gid mapping via gosu at run stage.  
 
 # RUN
 Use `-e <key>=<val>` or `--env-file <env file>` to override environment variables
@@ -12,7 +12,7 @@ docker stop ubuntu18
 ```
 
 # Access
-First time booting will be slow because of updating and installing packages(language related).  
+**First time booting will be slow** because of updating and installing packages(language related).  
 
 - connect via VNC viewer localhost:5901, default password: passwd
 - connect via browser: http://localhost:6901/vnc.html, default password: passwd

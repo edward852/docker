@@ -3,6 +3,11 @@ ARG OS=ubuntu
 # for autobuild (build stage)
 ARG DEBIAN_FRONTEND=noninteractive
 
+LABEL maintainer="edward852@github.com"
+LABEL Description="Image with xfce4 ui, vnc server, firefox. Uid and gid mapping via gosu at run stage."
+LABEL io.openshift.tags="ubuntu, xfce, vnc, uid, gid, gosu"
+LABEL io.openshift.expose-services="5901:xvnc, 6901:http"
+
 ENV SHR_PATH=/home
 WORKDIR ${SHR_PATH}
 
