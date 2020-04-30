@@ -2,6 +2,7 @@
 
 cd ~
 source ~/.bashrc
+export USER=$USR_NAME
 
 echo "uid $(id -u) gid $(id -g) lang $LANG called startup.sh"
 

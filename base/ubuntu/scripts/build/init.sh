@@ -5,7 +5,7 @@ echo "Build init started..."
 
 ${SHR_SCRIPTS}/run/use_mirror.sh
 
-apt install -y gosu sudo openssl wget curl p7zip-full p7zip-rar bsdtar locales
+apt install -y gosu sudo acl openssl wget curl p7zip-full p7zip-rar bsdtar locales
 ${SHR_SCRIPTS}/build/inst_font.sh
 
 groupadd -g 120 no_pw_sudo
