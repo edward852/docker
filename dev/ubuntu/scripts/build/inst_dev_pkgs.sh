@@ -3,7 +3,7 @@ set -e
 
 echo "Installing dev packages..."
 apt update
-apt install -y build-essential software-properties-common git gdb libtinfo-dev bear net-tools
+apt install -y build-essential software-properties-common git gdb libtinfo-dev bear net-tools acl
 
 # cmake
 ${SHR_SCRIPTS}/build/inst_cmake.sh
@@ -33,7 +33,7 @@ ${SHR_SCRIPTS}/build/inst_ccls.sh
 ${SHR_SCRIPTS}/build/inst_gtest.sh
 
 # rust
-#${SHR_SCRIPTS}/build/inst_rust.sh
+${SHR_SCRIPTS}/build/inst_rust.sh
 
 apt autoremove -y
 apt clean -y

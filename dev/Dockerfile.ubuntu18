@@ -2,7 +2,7 @@ FROM edward852/ubuntu-xfce-vnc-mapped-uid:latest
 ARG OS=ubuntu
 ARG DEBIAN_FRONTEND=noninteractive
 
-#ADD ./comm/configs/ ${SHR_CONFIGS}/
+ADD ./comm/configs/ ${SHR_CONFIGS}/
 #ADD ./${OS}/configs/ ${SHR_CONFIGS}/
 ADD ./comm/scripts/ ${SHR_SCRIPTS}/
 ADD ./${OS}/scripts/ ${SHR_SCRIPTS}/

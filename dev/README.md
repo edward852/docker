@@ -13,3 +13,5 @@ Additional packages:
 - hugo  
 - ccls  
 - googletest  
+- rust  
+
